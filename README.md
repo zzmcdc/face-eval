@@ -18,4 +18,4 @@ python plot_AP_fddb.py
 Check:
 python plot_AP.py --help 
 
-for the availables options.
+for the available options.
