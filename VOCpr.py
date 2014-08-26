@@ -1,3 +1,6 @@
+
+from __future__ import print_function
+
 #from hog import *
 import numpy
 import pylab
@@ -62,7 +65,7 @@ def VOCprRecord(gtImages, detlist, show=False, ovr=0.5, pixels=None):
         if show:
             prec = numpy.sum(tp) / float(numpy.sum(tp) + numpy.sum(fp))
             rec = numpy.sum(tp) / tot
-            print "Scr:", detbb[1], "Prec:%.3f" % prec, "Rec:%.3f" % rec
+            print("Scr:", detbb[1], "Prec:%.3f" % prec, "Rec:%.3f" % rec)
             ss = raw_input()
             if ss == "s" or not(found):
                 pylab.ioff()
@@ -160,7 +163,7 @@ def VOCprRecordOptim(gtImages, detlist, show=False, ovr=0.5, pixels=None):
         if show:
             prec = numpy.sum(tp) / float(numpy.sum(tp) + numpy.sum(fp))
             rec = numpy.sum(tp) / tot
-            print "Scr:", detbb[1], "Prec:%.3f" % prec, "Rec:%.3f" % rec
+            print("Scr:", detbb[1], "Prec:%.3f" % prec, "Rec:%.3f" % rec)
             ss = raw_input()
             if ss == "s" or not(found):
                 pylab.ioff()
@@ -279,9 +282,9 @@ def evaluate_optim(tsImages, dets, lab, color, iter=3, point=False, ovr=0.5):
         tty += ty
         tsx *= sx
         tsy *= sy
-        # print "#%d tx:%f ty:%f sx:%f sy:%f"%(sum(tp),tx,ty,sx,sy)
+        # print("#%d tx:%f ty:%f sx:%f sy:%f"%(sum(tp),tx,ty,sx,sy))
         dets = transf_dets(dets, tx, ty, sx, sy)
-    print "Tranformations " + lab, ttx, tty, tsx, tsy
+    print("Tranformations " + lab, ttx, tty, tsx, tsy)
 
     rc, pr, ap1 = drawPrfast(tp, fp, tot, show=False)
     if point:
