@@ -5,6 +5,7 @@ import os
 colorCounter = 11
 color_list = pylab.cm.Set1(np.linspace(0, 1, 26))
 
+
 def getColorLabel(name):
     print (name)
     global colorCounter, color_list
@@ -12,53 +13,45 @@ def getColorLabel(name):
         color = 'black'
         label = "Ours SquaresChnFtrs-5"
 
-    elif name.find("Ours_Headhunter") != -1 or name.find("Ours HeadHunter") != -1 :
+    elif name.find("Ours_Headhunter") != -1 or name.find("Ours HeadHunter") != -1:
         color = 'r'
         label = "Ours HeadHunter"
-    elif name.find("Face++") != -1 :
+    elif name.find("Face++") != -1:
         color = 'b'
         label = "Face++"
-    elif name.find("Picasa") != -1 :
+    elif name.find("Picasa") != -1:
         color = 'r'
         label = "Picasa"
-    elif name.find("Structured") != -1 :
+    elif name.find("Structured") != -1:
         color = color_list[10]
         label = "Structured Models [33]"
-    elif name.find("WS_Boosting") != -1 :
+    elif name.find("WS_Boosting") != -1:
         color = color_list[1]
         label = "W.S. Boosting [14]"
-    elif name.find("Sky") != -1 :
+    elif name.find("Sky") != -1:
         color = color_list[2]
         label = "Sky Biometry [28]"
-    elif name.find("OpenCV") != -1 :
+    elif name.find("OpenCV") != -1:
         color = color_list[3]
         label = "OpenCV"
-    elif name.find("TSM") != -1 :
+    elif name.find("TSM") != -1:
         color = color_list[4]
         label = "TSM [36]"
-    elif name.find("DPM") != -1 or name.find("<0.3") !=-1:
+    elif name.find("DPM") != -1 or name.find("<0.3") != -1:
         color = color_list[8]
-        #color = 'b' 
+        #color = 'b'
         label = "Ours DPM [9]"
-    elif name.find("Shen") != -1 :
+    elif name.find("Shen") != -1:
         color = color_list[7]
-        #color = 'b' 
+        #color = 'b'
         label = "Shen et al. [27]"
-    elif name.find("Viola") != -1 :
+    elif name.find("Viola") != -1:
         color = color_list[9]
-        #color = 'b' 
+        #color = 'b'
         label = "Viola Jones [30]"
     else:
         color = color_list[colorCounter]
-        colorCounter = colorCounter +1
+        colorCounter = colorCounter + 1
         label = os.path.splitext(os.path.basename(name))[0]
         label = label.replace("_", " ")
     return [color, label]
-
-
-    
-
-
-
-
-
