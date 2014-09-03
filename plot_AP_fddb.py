@@ -35,7 +35,7 @@ def load_fddb(ff):
     pr = data[pos, 0]
     print pr
     label = label + " (%0.3f)" % (pr)
-    plotid = pylab.plot(data[:, 1], data[:, 0], color=color, linewidth=5)
+    plotid, = pylab.plot(data[:, 1], data[:, 0], color=color, linewidth=5)
     return plotid, pr, label
 
 
